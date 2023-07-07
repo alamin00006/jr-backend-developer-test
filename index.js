@@ -1,7 +1,8 @@
 require("dotenv").config();
 
 const app = require("./app");
-
+const DBConnect = require("./utilis/dbConnect");
+DBConnect();
 // server
 const port = process.env.PORT || 8080;
 

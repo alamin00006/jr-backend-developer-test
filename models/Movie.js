@@ -14,14 +14,38 @@ const movieSchema = mongoose.Schema(
       trim: true,
       unique: true,
     },
-    movieRelaesYear: {
+    releaseDate: {
       type: Number,
+      required: true,
+      trim: true,
+      unique: true,
+    },
+    runtime: {
+      type: Number,
+      required: true,
+      trim: true,
+      unique: true,
+    },
+    actors: {
+      type: Number,
+      required: true,
+      trim: true,
+      unique: true,
+    },
+    producer: {
+      type: String,
       required: true,
       trim: true,
       unique: true,
     },
     tvShow: {
       type: Boolean,
+      required: true,
+      trim: true,
+      unique: true,
+    },
+    posterImage: {
+      type: String,
       required: true,
       trim: true,
       unique: true,
