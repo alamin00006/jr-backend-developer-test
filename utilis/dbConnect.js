@@ -12,7 +12,7 @@ const options = {
   family: 4,
 };
 
-const uri = `mongodb+srv://alamin:mQB7LAGnQXuctqXC@movie.qzd1h4s.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@movie.qzd1h4s.mongodb.net/?retryWrites=true&w=majority`;
 
 const connectWithDB = () => {
   mongoose.connect(uri, options, (err, db) => {
