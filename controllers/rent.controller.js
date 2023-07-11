@@ -18,26 +18,21 @@ exports.createRent = async (req, res) => {
 };
 
 exports.getAllRent = async (req, res, next) => {
+  const query = req.query?.query;
+
   try {
-    const RentTotalCount = await Rent.countDocuments({});
-    const page = parseInt(req.query?.page);
-    const size = parseInt(req.query?.size);
-
-    if (page || size) {
-      const rents = await Rent.find({})
-        .skip(page * size)
-        .limit(size);
-
+    if (query === "Others") {
+      return;
+    }
+    if (query === "All") {
+      const rents = await Rent.find({});
       res.status(200).json({
         status: "success",
         message: "data get Success",
-        data: {
-          rents,
-          RentTotalCount,
-        },
+        data: rents,
       });
     } else {
-      const rents = await Rent.find({});
+      const rents = await Rent.find({ name: query });
       res.status(200).json({
         status: "success",
         message: "data get Success",
