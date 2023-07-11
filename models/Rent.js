@@ -1,43 +1,38 @@
 const mongoose = require("mongoose");
 
-const movieSchema = mongoose.Schema(
+const RentSchema = mongoose.Schema(
   {
-    director: {
+    name: {
       type: String,
       required: true,
       trim: true,
     },
-    movieName: {
+    title: {
       type: String,
       required: true,
       trim: true,
     },
-    releaseDate: {
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    dayPrice: {
       type: Number,
       required: true,
       trim: true,
     },
-    runtime: {
+    monthPrice: {
       type: Number,
       required: true,
       trim: true,
     },
-    actors: {
-      type: String,
+    yearPrice: {
+      type: Number,
       required: true,
       trim: true,
     },
-    producer: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    tvShow: {
-      type: Boolean,
-      required: true,
-      trim: true,
-    },
-    posterImage: {
+    image: {
       type: String,
       required: true,
       trim: true,
@@ -48,5 +43,5 @@ const movieSchema = mongoose.Schema(
   }
 );
 
-const Movie = mongoose.model("Movie", movieSchema);
-module.exports = Movie;
+const Rent = mongoose.model("Rent", RentSchema);
+module.exports = Rent;

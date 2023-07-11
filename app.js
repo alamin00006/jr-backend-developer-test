@@ -6,10 +6,8 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-const movieRoute = require("./routes/movie.route");
-const userRoute = require("./routes/user.route");
+const rentRoute = require("./routes/rent.route");
 
-app.use("/api/v1/movie", movieRoute);
-app.use("/api/v1/user", userRoute);
+app.use("/api/v1/rent", rentRoute);
 
 module.exports = app;
